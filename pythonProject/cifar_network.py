@@ -4,9 +4,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-class Net(nn.Module):
+class CifarNet(nn.Module):
     def __init__(self):
-        super(Net, self).__init__()
+        super(CifarNet, self).__init__()
         self.conv1 = nn.Conv2d(3, 3, 5, bias=False)
         # self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(3, 3, 5, bias=False)
@@ -19,6 +19,7 @@ class Net(nn.Module):
         x = F.relu(self.conv3(x))
         x = x.view(-1, 20 * 20 * 3)
         x = self.fc1(x)
+
 
         return x
 

@@ -13,10 +13,10 @@ class Net(nn.Module):
         self.fc5 = nn.Linear(450, 225)
 
     def forward(self, x):
-        x = self.fc1(x)
-        x = self.fc2(x)
-        x = self.fc3(x)
-        x = self.fc4(x)
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = F.relu(self.fc3(x))
+        x = F.relu(self.fc4(x))
         x = self.fc5(x)
 
         return x

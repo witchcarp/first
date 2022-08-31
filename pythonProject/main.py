@@ -34,7 +34,7 @@ if __name__ == '__main__':
     device = torch.device('cuda:0')
     net = Net()
     net.to(device)
-    data = ParamData(r'D:\pythonProject\dataset')
+    data = ParamData(r'/traindataset')
     dataloader = DataLoader(data, batch_size=1, shuffle=False)
     # for i_batch, batch_data in enumerate(dataloader):
     #     print(i_batch)
@@ -42,8 +42,8 @@ if __name__ == '__main__':
     #     print(torch.mean(batch_data[1]))
 
     criterion = nn.MSELoss()
-    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
-    for epoch in range(2):
+    optimizer = optim.SGD(net.parameters(), lr=0.5, momentum=0.9)
+    for epoch in range(100):
         for i, data in enumerate(dataloader, 0):
             inputs, gth = data
             optimizer.zero_grad()
@@ -51,6 +51,8 @@ if __name__ == '__main__':
             loss = criterion(outputs, gth)
             loss.backward()
             optimizer.step()
-            print(loss)
+            print(epoch, loss)
 
     print('finish training')
+
+

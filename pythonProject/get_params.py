@@ -10,7 +10,7 @@ from cifar_network import CifarNet
 
 device = torch.device('cuda:0')
 model = CifarNet()
-model.load_state_dict(torch.load('cifar10_params.pth', map_location='cuda:0'))
+model.load_state_dict(torch.load('cifar1_params.pth', map_location='cuda:0'))
 model.to(device)
 params = list([])
 # for n, p in model.named_parameters():
@@ -29,8 +29,8 @@ params2 = torch.tensor(params[1])
 params3 = torch.tensor(params[2])
 
 params = torch.cat((params1, params2), dim=1)
-torch.save(params, 'testdataset/a1.pt') # params of 1,2 layers
-torch.save(params3, 'testdataset/b1.pt') # params of 3 layers
+torch.save(params, 'testdataset111/a1.pt') # params of 1,2 layers
+torch.save(params3, 'testdataset111/b1.pt') # params of 3 layers
 
 
 

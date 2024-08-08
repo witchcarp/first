@@ -1,7 +1,15 @@
 
 abcdefg
-AAAAAAAAAAAAAAAA
-main更新
+xueAAAAAAAAA
+xxxxxxx更新
+
+
+
+
+lia对xue的修改》》》》》》
+
+
+
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np

@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-class SlimmableConv2d(nn.Conv2d):
+class SlimmzzzzzzzzzableConv2d(nn.Conv2d):
     def __init__(self, in_channels_list, out_channels_list,
                  kernel_size, stride=1, padding=0, dilation=1,
                  bias=True):
